@@ -1,0 +1,11 @@
+SMT-Lasso-Regression-v0.33 is the first code base I spent quite some time working on. Enviromental represents more recent work. I wrote almost all of the code found in Environmental.
+
+You can find OLS, PCR, etc. in the folder titled Environmental. This is explicitly chemometrics-related, as we try to improve the industry standard in detecting (potentially toxic) compounds in wastewater. Start with Process.m.
+
+---
+
+In SMT-Lasso-Regression, our original problem was to see if SMT would be relevant to spectral data sets in chemometrics.
+
+After a lot of time taking SMT and putting it back together, we found out that it wasn't. The reason is because the latent dimension of spectra data sets is actually quite small, even though the actual dimensionality is quite large. This is in accordance with another interpretation of SMT's use, when the information you want is 'stored' in small eigenvalues on the order of noise.
+
+I programmed the versions beginning with nSMT. You'll find these don't integrate with the code base. This is because we used RSME instead of SNR for our loss function and compared it to other methods (OLS, PCR, PLS, Ridge and briefly Wavelets, Treelets, and iPCA).
